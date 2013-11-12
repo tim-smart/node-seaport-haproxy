@@ -1,6 +1,6 @@
 {
   "name": "seaport-haproxy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sync seaport and haproxy to keep your services balanced",
   "main": "lib/seaport-haproxy.js",
   "dependencies": {
