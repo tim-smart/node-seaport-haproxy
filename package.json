@@ -4,12 +4,11 @@
   "description": "Sync seaport and haproxy to keep your services balanced",
   "main": "lib/seaport-haproxy.js",
   "dependencies": {
-    "seaport": "~1.7.1",
-    "haproxy": "0.0.3",
     "ejs": "~0.8.4"
   },
   "devDependencies": {
-    "mocha": "~1.14.0"
+    "seaport": "~1.7.1",
+    "haproxy": "0.0.3",
   },
   "scripts": {
     "test": "mocha"
