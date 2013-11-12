@@ -8,6 +8,7 @@ var ports   = seaport.connect('127.0.0.1', 9090)
 var haproxy = new Haproxy(
   '/var/run/haproxy.socket'
 , { config : mpath.resolve('haproxy.cfg')
+  , prefix : 'sudo'
   }
 )
 
