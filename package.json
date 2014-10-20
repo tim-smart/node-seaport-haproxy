@@ -4,7 +4,8 @@
   "description": "Sync seaport and haproxy to keep your services balanced",
   "main": "lib/seaport-haproxy.js",
   "dependencies": {
-    "ejs": "~0.8.4"
+    "ejs": "~0.8.4",
+    "oop-utils": "^0.2.3"
   },
   "devDependencies": {
     "haproxy": "0.0.3",
