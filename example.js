@@ -1,35 +1,30 @@
-var proxy   = require('./')
-var mpath   = require('path')
+var proxy   = require('./');
+var mpath   = require('path');
 
-var seaport = require('seaport')
-var Haproxy = require('haproxy')
+var seaport = require('seaport');
+var Haproxy = require('haproxy');
 
-var ports   = seaport.connect('127.0.0.1', 9090)
-var haproxy = new Haproxy(
-  '/var/run/haproxy.socket'
-, { config : mpath.resolve('haproxy.cfg')
-  , prefix : 'sudo'
-  }
-)
+var ports   = seaport.connect('127.0.0.1', 9090);
+var haproxy = new Haproxy('/var/run/haproxy.socket', {
+	config: mpath.resolve('haproxy.cfg'),
+	prefix: 'sudo'
+});
 
-var service = proxy.createService(
-  ports
-, haproxy
-, { template : mpath.resolve('haproxy.cfg.ejs')
-  }
-)
+var service = proxy.createService(ports, haproxy, {
+	template: mpath.resolve('haproxy.cfg.ejs')
+});
 
-service.on('error', function (err) {
-  console.error('[error]', err)
-  process.emit('SIGINT')
-})
+service.on('error', function(err) {
+	console.error('[error]', err);
+	process.emit('SIGINT');
+});
 
-service.on('haproxy:reload', function () {
-  console.error('[reload]')
-})
+service.on('haproxy:reload', function() {
+	console.error('[reload]');
+});
 
-process.on('SIGINT', function () {
-  haproxy.stop(function () {
-    process.exit()
-  })
-})
+process.on('SIGINT', function() {
+	haproxy.stop(function() {
+		process.exit();
+	});
+});
