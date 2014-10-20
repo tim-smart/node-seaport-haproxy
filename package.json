@@ -7,11 +7,14 @@
     "ejs": "~0.8.4"
   },
   "devDependencies": {
-    "seaport": "~1.7.1",
-    "haproxy": "0.0.3"
+    "haproxy": "0.0.3",
+    "jscs": "^1.7.3",
+    "jshint": "^2.5.6",
+    "seaport": "~1.7.1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "ln -sf '../../hooks/pre-commit' .git/hooks/pre-commit"
   },
   "repository": {
     "type": "git",

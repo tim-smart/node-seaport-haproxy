@@ -1,0 +1,17 @@
+{
+    "eqeqeq": true,
+    "forin": true,
+    "freeze": true,
+    "immed": true,
+    "latedef": "nofunc",
+    "laxbreak": true,
+    "noarg": true,
+    "nonbsp": true,
+    "nonew": true,
+    "plusplus": true,
+    "undef": true,
+    "unused": true,
+
+    "browser": true,
+    "node": true
+}
